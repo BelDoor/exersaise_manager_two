@@ -6,7 +6,7 @@
 
     <servlet>
     <servlet-name>MainServlet</servlet-name>
-        <servlet-class>com.exersaise.controllers.FrontController</servlet-class>
+        <servlet-class>com.exercise.controllers.FrontController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>MainServlet</servlet-name>
@@ -37,7 +37,7 @@
 
     <filter>
         <filter-name>CharsetFilter</filter-name>
-        <filter-class>com.exersaise.filters.CharsetFileter</filter-class>
+        <filter-class>com.exercise.filters.CharsetFilter</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>CharsetFilter</filter-name>

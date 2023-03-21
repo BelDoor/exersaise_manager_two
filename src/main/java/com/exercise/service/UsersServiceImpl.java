@@ -8,14 +8,14 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class UsersServiceImpl implements UsersService{
+public class UsersServiceImpl implements UsersService {
 
     @Autowired
     private UserRepository userRepository;
 
     @Override
     public Users findOne(Long id) {
-        return null;
+        return userRepository.findOne(id);
     }
 
     @Override
@@ -25,20 +25,21 @@ public class UsersServiceImpl implements UsersService{
 
     @Override
     public Users create(Users object) {
-        if (object.getHeight() > 175) {
-            throw new RuntimeException("Something wrong!");
-        }
-
         return userRepository.create(object);
     }
 
     @Override
-    public Users update(Users object) {
-        return null;
+    public Users update(Long id, Users object) {
+        return userRepository.update(id, object);
     }
 
     @Override
     public void delete(Long id) {
+        userRepository.delete(id);
+    }
 
+    @Override
+    public Users getRandomUsers() {
+        return userRepository.getRandomUsers();
     }
 }

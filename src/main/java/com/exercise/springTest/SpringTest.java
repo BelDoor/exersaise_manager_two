@@ -15,6 +15,5 @@ public class SpringTest {
 
         System.out.println(userRepository.findAll());
         System.out.println(usersService.findAll());
-
     }
 }

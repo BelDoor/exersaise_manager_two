@@ -1,6 +1,6 @@
 package com.exercise;
 
-import com.exercise.service.UserParameters.UserJoinParametersService;
+import com.exercise.service.user_parameters.UserJoinParametersService;
 import com.exercise.service.UsersService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 

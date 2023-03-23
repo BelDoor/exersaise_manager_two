@@ -1,4 +1,4 @@
-package com.exercise.service.UserParameters;
+package com.exercise.service.user_parameters;
 
 import com.exercise.domain.UserParametrs;
 import com.exercise.repository.join_table.UsersJoinParameters;
@@ -9,8 +9,12 @@ import java.util.List;
 
 @Service
 public class UserJoinParametersServiceImpl implements UserJoinParametersService {
-    @Autowired
-    UsersJoinParameters usersJoinParameters;
+
+    private final UsersJoinParameters usersJoinParameters;
+
+    public UserJoinParametersServiceImpl(UsersJoinParameters usersJoinParameters) {
+        this.usersJoinParameters = usersJoinParameters;
+    }
 
     @Override
     public List<UserParametrs> findUserParameters(Long id) {

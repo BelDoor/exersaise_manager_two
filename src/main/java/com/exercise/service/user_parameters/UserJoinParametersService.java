@@ -1,4 +1,4 @@
-package com.exercise.service.UserParameters;
+package com.exercise.service.user_parameters;
 
 import com.exercise.domain.UserParametrs;
 

@@ -8,11 +8,31 @@
     <servlet-name>MainServlet</servlet-name>
         <servlet-class>com.exercise.controllers.FrontController</servlet-class>
     </servlet>
+
     <servlet-mapping>
         <servlet-name>MainServlet</servlet-name>
         <url-pattern>/FrontController</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>ContactRandomServlet</servlet-name>
+        <servlet-class>com.exercise.controllers.ContactsController</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ContactRandomServlet</servlet-name>
+        <url-pattern>/RandomContact</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CasualContact</servlet-name>
+        <jsp-file>/WEB-INF/jsp/contact.jsp</jsp-file>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>CasualContact</servlet-name>
+        <url-pattern>/contact</url-pattern>
+    </servlet-mapping>
 
     <servlet>
         <servlet-name>HelloColombia</servlet-name>

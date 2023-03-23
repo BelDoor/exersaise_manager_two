@@ -2,6 +2,7 @@ package com.exercise.controllers;
 
 import com.exercise.domain.Users;
 import com.exercise.service.UsersService;
+import com.exercise.service.UsersServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 

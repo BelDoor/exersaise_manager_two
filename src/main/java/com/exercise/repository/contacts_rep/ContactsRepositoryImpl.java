@@ -1,5 +1,6 @@
 package com.exercise.repository.contacts_rep;
 
+import com.exercise.configuration.DataBaseProperties;
 import com.exercise.domain.Contacts;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Repository;
@@ -24,16 +25,16 @@ import static com.exercise.repository.columns.ContactsColumns.EMAIL;
 
 @Repository
 public class ContactsRepositoryImpl implements ContactsRepository {
-    public static final String POSTRGES_DRIVER_NAME = "org.postgresql.Driver";
-    public static final String DATABASE_URL = "jdbc:postgresql://localhost:";
-    public static final int DATABASE_PORT = 5432;
-    public static final String DATABASE_NAME = "/exercise_manager";
-    public static final String DATABASE_LOGIN = "pablito";
-    public static final String DATABASE_PASSWORD = "pablito";
+
+    final DataBaseProperties dataBaseProperties;
+
+    public ContactsRepositoryImpl(DataBaseProperties dataBaseProperties) {
+        this.dataBaseProperties = dataBaseProperties;
+    }
 
     private void registredDriver() {
         try {
-            Class.forName(POSTRGES_DRIVER_NAME);
+            Class.forName(dataBaseProperties.getPostgresDriverName());
         } catch (ClassNotFoundException e) {
             System.err.println(e.getMessage());
             throw new RuntimeException(e);
@@ -41,9 +42,11 @@ public class ContactsRepositoryImpl implements ContactsRepository {
     }
 
     private Connection getConnection() {
-        String jdbcURL = StringUtils.join(DATABASE_URL, DATABASE_PORT, DATABASE_NAME);
+        String jdbcURL = StringUtils.join(dataBaseProperties.getUrl(),
+                dataBaseProperties.getPort(), dataBaseProperties.getName());
         try {
-            return DriverManager.getConnection(jdbcURL, DATABASE_LOGIN, DATABASE_PASSWORD);
+            return DriverManager.getConnection(jdbcURL, dataBaseProperties.getLogin(),
+                    dataBaseProperties.getPassword());
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

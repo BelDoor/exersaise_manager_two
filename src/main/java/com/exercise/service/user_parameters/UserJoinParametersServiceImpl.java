@@ -2,19 +2,18 @@ package com.exercise.service.user_parameters;
 
 import com.exercise.domain.UserParametrs;
 import com.exercise.repository.join_table.UsersJoinParameters;
+import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class UserJoinParametersServiceImpl implements UserJoinParametersService {
 
     private final UsersJoinParameters usersJoinParameters;
-
-    public UserJoinParametersServiceImpl(UsersJoinParameters usersJoinParameters) {
-        this.usersJoinParameters = usersJoinParameters;
-    }
 
     @Override
     public List<UserParametrs> findUserParameters(Long id) {

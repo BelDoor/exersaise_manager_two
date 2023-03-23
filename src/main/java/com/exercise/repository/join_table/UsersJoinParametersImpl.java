@@ -2,6 +2,8 @@ package com.exercise.repository.join_table;
 
 import com.exercise.configuration.DataBaseProperties;
 import com.exercise.domain.UserParametrs;
+import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
@@ -25,13 +27,10 @@ import static com.exercise.repository.columns.UserParametrsColumns.WEIGHT;
 
 @Repository
 @Primary
+@RequiredArgsConstructor
 public class UsersJoinParametersImpl implements UsersJoinParameters {
 
     private final DataBaseProperties dataBaseProperties;
-
-    public UsersJoinParametersImpl(DataBaseProperties dataBaseProperties) {
-        this.dataBaseProperties = dataBaseProperties;
-    }
 
     private void registeredDriver() {
         try {

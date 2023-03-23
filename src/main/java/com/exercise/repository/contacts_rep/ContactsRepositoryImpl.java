@@ -2,6 +2,8 @@ package com.exercise.repository.contacts_rep;
 
 import com.exercise.configuration.DataBaseProperties;
 import com.exercise.domain.Contacts;
+import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Repository;
 
@@ -24,13 +26,10 @@ import static com.exercise.repository.columns.ContactsColumns.PHONE_NUMBER;
 import static com.exercise.repository.columns.ContactsColumns.EMAIL;
 
 @Repository
+@RequiredArgsConstructor
 public class ContactsRepositoryImpl implements ContactsRepository {
 
-    final DataBaseProperties dataBaseProperties;
-
-    public ContactsRepositoryImpl(DataBaseProperties dataBaseProperties) {
-        this.dataBaseProperties = dataBaseProperties;
-    }
+    private final DataBaseProperties dataBaseProperties;
 
     private void registredDriver() {
         try {

@@ -5,6 +5,7 @@ import com.exercise.domain.UserParametrs;
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
@@ -32,11 +33,16 @@ public class UsersJoinParametersImpl implements UsersJoinParameters {
 
     private final DataBaseProperties dataBaseProperties;
 
+    private final Logger logger = Logger.getLogger(UsersJoinParametersImpl.class);
+
     private void registeredDriver() {
+        logger.info("Start of registeredDriver method!");
         try {
             Class.forName(dataBaseProperties.getPostgresDriverName());
+
+            logger.info("End of registeredDriver method!");
         } catch (ClassNotFoundException e) {
-            System.err.println("JDBC Driver Cannot be loaded!");
+            logger.error(e.getMessage(), e);
             throw new RuntimeException("JDBC Driver Cannot be loaded!");
         }
     }
@@ -74,6 +80,8 @@ public class UsersJoinParametersImpl implements UsersJoinParameters {
 
     @Override
     public List<UserParametrs> findUserParameters(Long id) {
+        logger.info("Start of findUserParameters method  with parameter id = " + id);
+
         String userJoinParametersQuery = "SELECT u.name, u.surname," +
                 "par.weight, par.fat_percent, par.max_bench, par.max_squat, " +
                 "par.max_traction FROM users AS u JOIN parameters_gym AS par ON u.id = par.user_id WHERE u.id = ?";
@@ -91,13 +99,16 @@ public class UsersJoinParametersImpl implements UsersJoinParameters {
                 }
 
             } catch (SQLException e) {
-                System.err.println(e.getMessage());
+                logger.error(e.getMessage(), e);
+                throw new RuntimeException();
             }
 
         } catch (SQLException e) {
-            System.err.println(e.getMessage());
+            logger.error(e.getMessage(), e);
             throw new RuntimeException("Exception in findUserParameters");
         }
+
+        logger.info("End of findUserParameters method");
 
         return userParametrs;
     }

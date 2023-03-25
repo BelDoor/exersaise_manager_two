@@ -1,7 +1,9 @@
 package com.exercise;
 
+import com.exercise.aspect.ClassMethodCount;
 import com.exercise.repository.join_table.UsersJoinParameters;
 import com.exercise.repository.join_table.UsersJoinParametersTemplateImpl;
+import com.exercise.repository.user_rep.UserRepository;
 import com.exercise.service.user_parameters.UserJoinParametersService;
 import com.exercise.service.UsersService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -20,9 +22,14 @@ public class Main {
         System.err.println("\n--->\n");
         System.err.println(usersService.getRandomUsers());
         System.err.println("\n--->\n");
+        System.out.println(usersService.findAll());
+        System.out.println(usersService.findAll());
+        System.err.println("\n--->\n");
 
         UsersJoinParameters usersJoinParameters2 = applicationContext.getBean("usersJoinParametersTemplateImpl",
                 UsersJoinParameters.class);
         System.out.println(usersJoinParameters2.findUserParameters(3L));
+
+        ClassMethodCount.setCountClassMethod();
     }
 }

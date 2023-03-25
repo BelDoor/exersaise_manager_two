@@ -3,12 +3,14 @@ package com.exercise.configuration;
 import com.zaxxer.hikari.HikariDataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 
 import javax.sql.DataSource;
 
 @Configuration
+@EnableAspectJAutoProxy(proxyTargetClass = true)
 public class ApplicationConfig {
 
     @Bean

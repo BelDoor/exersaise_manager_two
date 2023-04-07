@@ -2,19 +2,17 @@ package com.exercise.service;
 
 import com.exercise.domain.Users;
 import com.exercise.repository.user_rep.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 @Service
+@RequiredArgsConstructor
 public class UserAggregationServiceImpl implements UserAggregationService {
-    @Autowired
-    private UserRepository userRepository;
 
-    private final UsersService usersService = new UsersServiceImpl();
+    private final UserRepository userRepository;
 
     @Override
     public Map<String, Object> getStats() {

@@ -1,11 +1,7 @@
 package com.exercise.repository.user_rep;
 
-import com.exercise.domain.Contacts;
 import com.exercise.domain.Users;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.stereotype.Repository;
-
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -16,7 +12,6 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
-@Repository
 public class UserRepositoryImpl implements UserRepository {
 
     public static final String POSTGRES_DRIVER_NAME = "org.postgresql.Driver";
@@ -232,5 +227,10 @@ public class UserRepositoryImpl implements UserRepository {
             throw new RuntimeException("SQL Issues!");
         }
         return user;
+    }
+
+    @Override
+    public List<Users> searchUsers(String query, Integer height) {
+        return null;
     }
 }

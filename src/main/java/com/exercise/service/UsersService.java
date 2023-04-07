@@ -16,4 +16,6 @@ public interface UsersService {
     void delete(Long id);
 
     Users getRandomUsers();
+
+    List<Users> searchUsers(String query, Integer height);
 }

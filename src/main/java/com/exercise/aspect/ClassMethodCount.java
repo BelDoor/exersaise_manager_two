@@ -1,8 +1,6 @@
 package com.exercise.aspect;
 
-import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
@@ -16,7 +14,7 @@ import java.util.Map;
 @Aspect
 public class ClassMethodCount {
 
-   private static Map<String, Integer> countClassMethod = new HashMap<>();
+    private static Map<String, Integer> countClassMethod = new HashMap<>();
 
     @Pointcut("execution(* com.exercise.*.*.*.*(..))")
     public void pointcutClassCount() {
@@ -31,13 +29,12 @@ public class ClassMethodCount {
         } else {
             countClassMethod.put(name, 1);
         }
+        try {
             return joinPoint.proceed();
-    }
-
-    public static void setCountClassMethod(){
-        for (String st: countClassMethod.keySet()) {
-            System.out.println(st + " = " +countClassMethod.get(st));
+        } finally {
+            for (String st : countClassMethod.keySet()) {
+                System.out.println(st + " = " + countClassMethod.get(st));
+            }
         }
-      //  System.out.println(countClassMethod.toString());
     }
 }

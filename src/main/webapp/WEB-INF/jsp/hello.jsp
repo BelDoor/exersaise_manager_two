@@ -7,7 +7,7 @@
 <body>
     I Say hello COLOMBIA!!!
 
-    ${usersName}
+    ${userName}
 
     <div>
         <h1>System Users</h1>
@@ -22,7 +22,7 @@
                 <td>Gender</td>
                 <td>Height</td>
                 <td>Role_id</td>
-                <td>Delete</td>
+<%--                <td>Delete</td>--%>
             </tr>
             <c:forEach var="users" items="${users}">
                 <tr>
@@ -33,7 +33,7 @@
                     <td>${users.sex}</td>
                     <td>${users.height}</td>
                     <td>${users.roleId}</td>
-                    <td><button>Delete</button></td>
+<%--                    <td><button>Delete</button></td>--%>
                 </tr>
             </c:forEach>
         </table>

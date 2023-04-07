@@ -2,16 +2,23 @@ package com.exercise.service;
 
 import com.exercise.domain.Users;
 import com.exercise.repository.user_rep.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
+@Primary
 public class UsersServiceImpl implements UsersService {
 
-    @Autowired
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
+
+    @Override
+    public List<Users> searchUsers(String query, Integer height) {
+        return userRepository.searchUsers(query, height);
+    }
 
     @Override
     public Users findOne(Long id) {

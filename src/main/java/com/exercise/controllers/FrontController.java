@@ -2,10 +2,7 @@ package com.exercise.controllers;
 
 import com.exercise.domain.Users;
 import com.exercise.service.UsersService;
-import com.exercise.service.UsersServiceImpl;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-
+import lombok.RequiredArgsConstructor;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -15,10 +12,9 @@ import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Controller
+@RequiredArgsConstructor
 public class FrontController extends HttpServlet {
 
-    @Autowired
     private  UsersService usersService;
 
     @Override
@@ -39,7 +35,7 @@ public class FrontController extends HttpServlet {
 
            List<Users> users = usersService.findAll();
             String collect = users.stream().map(Users::getName).collect(Collectors.joining(","));
-            req.setAttribute("usersName", collect);
+            req.setAttribute("userName", collect);
             req.setAttribute("users", users);
             dispatcher.forward(req, resp);
         }

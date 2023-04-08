@@ -6,9 +6,9 @@
     http://www.springframework.org/schema/context/spring-context.xsd
     http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <context:component-scan base-package="com.exersaise"/>
+    <context:component-scan base-package="com.exercise"/>
 
-<!--    <bean id = "userRepositori" class = "com.exersaise.repository.UserRepositoryImpl">
+<!--    <bean id = "userRepositori" class = "com.exercise.repository.user_rep.UserRepositoryImpl">
 
     </bean>-->
 

@@ -17,6 +17,8 @@
         <maven.war.plugin.version>3.3.1</maven.war.plugin.version>
         <maven.compile.plugin.version>3.8.1</maven.compile.plugin.version>
         <spring.version>5.3.25</spring.version>
+        <lombok.version>1.18.24</lombok.version>
+
     </properties>
 
     <packaging>war</packaging>
@@ -74,7 +76,23 @@
             <version>${spring.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+        </dependency>
 
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
+            <version>5.0.1</version>
+        </dependency>
 
     </dependencies>
 

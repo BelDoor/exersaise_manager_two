@@ -21,13 +21,13 @@ public class UserParametrsRowMapper implements RowMapper<UserParametrs> {
     public UserParametrs mapRow(ResultSet rs, int rowNum) throws SQLException {
         UserParametrs userParametrs = new UserParametrs();
 
-            userParametrs.setName(rs.getString(NAME));
-            userParametrs.setSurname(rs.getString(SURNAME));
-            userParametrs.setWeight(rs.getFloat(WEIGHT));
-            userParametrs.setFatPercent(rs.getFloat(FAT_PERCENT));
-            userParametrs.setMaxBench(rs.getFloat(MAX_BENCH));
-            userParametrs.setMaxSquat(rs.getFloat(MAX_SQUAT));
-            userParametrs.setMaxTraction(rs.getFloat(MAX_TRACTION));
+        userParametrs.setName(rs.getString(NAME));
+        userParametrs.setSurname(rs.getString(SURNAME));
+        userParametrs.setWeight(rs.getFloat(WEIGHT));
+        userParametrs.setFatPercent(rs.getFloat(FAT_PERCENT));
+        userParametrs.setMaxBench(rs.getFloat(MAX_BENCH));
+        userParametrs.setMaxSquat(rs.getFloat(MAX_SQUAT));
+        userParametrs.setMaxTraction(rs.getFloat(MAX_TRACTION));
 
         return userParametrs;
     }

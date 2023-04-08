@@ -4,9 +4,14 @@ import com.exercise.domain.Users;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Primary;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.jdbc.core.namedparam.SqlParameterSource;
+import org.springframework.jdbc.support.GeneratedKeyHolder;
+import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 @Repository
@@ -32,7 +37,21 @@ public class UserRepositoryTemplate implements UserRepository {
 
     @Override
     public Users create(Users object) {
-        return null;
+        SqlParameterSource parametrs = new MapSqlParameterSource()
+                .addValue("name", object.getName())
+                .addValue("surname", object.getSurname())
+                .addValue("dateBirth", object.getDateBirth())
+                .addValue("sex", object.getSex())
+                .addValue("height", object.getHeight())
+                .addValue("role_id", object.getRoleId())
+                .addValue("created", new Timestamp(System.currentTimeMillis()));
+
+        KeyHolder holder = new GeneratedKeyHolder();
+
+        String createUsersQuery = "INSERT INTO users(name, surname, date_birth, sex, height," +
+                " role_id, created) VALUES (:name, :surname, :dateBirth, :sex, :height, :role_id, :created)";
+         nameParameterJdbcTemplate.update(createUsersQuery, parametrs, holder);
+         return findOne(2L);
     }
 
     @Override

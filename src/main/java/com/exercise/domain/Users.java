@@ -1,8 +1,11 @@
 package com.exercise.domain;
 
+import lombok.Builder;
+
 import java.sql.Timestamp;
 import java.util.Objects;
 
+@Builder
 public class Users {
 
     private Long id;

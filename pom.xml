@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <artifactId>exersaise_manager</artifactId>
+    <artifactId>exercise_manager</artifactId>
     <version>1.1-SNAPSHOT</version>
 
     <properties>

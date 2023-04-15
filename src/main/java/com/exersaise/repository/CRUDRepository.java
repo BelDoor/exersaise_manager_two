@@ -6,6 +6,8 @@ public interface CRUDRepository <K, T>{
 
     T findOne(K id);
 
+    T findById(K id);
+
     List<T> findAll();
 
     T create(T object);
@@ -13,5 +15,6 @@ public interface CRUDRepository <K, T>{
     T update(T object);
 
     void delete(K id);
+
 
 }

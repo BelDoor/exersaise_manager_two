@@ -90,6 +90,11 @@ public class UserRepositoryImpl implements UserRepository{
     }
 
     @Override
+    public Users findById(Long id) {
+        return null;
+    }
+
+    @Override
     public Users create(Users object) {
         return null;
     }
@@ -106,6 +111,6 @@ public class UserRepositoryImpl implements UserRepository{
 
     @Override
     public void serchUser() {
-
+        System.out.println("blabla");
     }
 }

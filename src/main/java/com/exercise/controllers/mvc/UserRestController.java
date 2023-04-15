@@ -25,6 +25,7 @@ public class UserRestController {
     public ResponseEntity<Object> getAllUsers(){
         List<Users> allUsers = usersService.findAll();
         return new ResponseEntity<>(allUsers, HttpStatus.OK);
+//         throw new RuntimeException("pika");
     }
 
     @PostMapping

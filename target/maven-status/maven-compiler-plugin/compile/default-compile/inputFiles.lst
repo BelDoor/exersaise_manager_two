@@ -1,4 +1,5 @@
 E:\Java 2.0\exercise_manager\exersaise_manager\src\main\java\com\exercise\repository\user_rep\UserRepository.java
+E:\Java 2.0\exercise_manager\exersaise_manager\src\main\java\com\exercise\controllers\mvc\UserRestController.java
 E:\Java 2.0\exercise_manager\exersaise_manager\src\main\java\com\exercise\domain\Users.java
 E:\Java 2.0\exercise_manager\exersaise_manager\src\main\java\com\exercise\controllers\mvc\UserController.java
 E:\Java 2.0\exercise_manager\exersaise_manager\src\main\java\com\exercise\repository\columns\UsersColumns.java
@@ -8,12 +9,16 @@ E:\Java 2.0\exercise_manager\exersaise_manager\src\main\java\com\exercise\reposi
 E:\Java 2.0\exercise_manager\exersaise_manager\src\main\java\com\exercise\configuration\DataBaseProperties.java
 E:\Java 2.0\exercise_manager\exersaise_manager\src\main\java\com\exercise\repository\join_table\UsersJoinParameters.java
 E:\Java 2.0\exercise_manager\exersaise_manager\src\main\java\com\exercise\domain\Contacts.java
+E:\Java 2.0\exercise_manager\exersaise_manager\src\main\java\com\exercise\controllers\requests\UserCreateRequest.java
 E:\Java 2.0\exercise_manager\exersaise_manager\src\main\java\com\exercise\repository\columns\ContactsColumns.java
 E:\Java 2.0\exercise_manager\exersaise_manager\src\main\java\com\exercise\repository\CRUDRepository.java
 E:\Java 2.0\exercise_manager\exersaise_manager\src\main\java\com\exercise\filters\CharsetFilter.java
 E:\Java 2.0\exercise_manager\exersaise_manager\src\main\java\com\exercise\repository\join_table\rowmapper\UserParametrsRowMapper.java
+E:\Java 2.0\exercise_manager\exersaise_manager\src\main\java\com\exercise\controllers\exceptio\ErrorMessage.java
 E:\Java 2.0\exercise_manager\exersaise_manager\src\main\java\com\exercise\service\user_parameters\UserJoinParametersServiceImpl.java
 E:\Java 2.0\exercise_manager\exersaise_manager\src\main\java\com\exercise\service\UserAggregationService.java
+E:\Java 2.0\exercise_manager\exersaise_manager\src\main\java\com\exercise\util\RandomValuesGenerator.java
+E:\Java 2.0\exercise_manager\exersaise_manager\src\main\java\com\exercise\controllers\exceptio\DefaultExceptionHandler.java
 E:\Java 2.0\exercise_manager\exersaise_manager\src\main\java\com\exercise\controllers\FrontController.java
 E:\Java 2.0\exercise_manager\exersaise_manager\src\main\java\com\exercise\service\contacts_ser\ContactsServiceImpl.java
 E:\Java 2.0\exercise_manager\exersaise_manager\src\main\java\com\exercise\repository\contacts_rep\ContactsRepositoryImpl.java
@@ -25,8 +30,10 @@ E:\Java 2.0\exercise_manager\exersaise_manager\src\main\java\com\exercise\reposi
 E:\Java 2.0\exercise_manager\exersaise_manager\src\main\java\com\exercise\aspect\ClassMethodCount.java
 E:\Java 2.0\exercise_manager\exersaise_manager\src\main\java\com\exercise\service\contacts_ser\ContactsService.java
 E:\Java 2.0\exercise_manager\exersaise_manager\src\main\java\com\exercise\repository\join_table\UsersJoinParametersTemplateImpl.java
+E:\Java 2.0\exercise_manager\exersaise_manager\src\main\java\com\exercise\SpringBootApplicationStarter.java
 E:\Java 2.0\exercise_manager\exersaise_manager\src\main\java\com\exercise\Main.java
 E:\Java 2.0\exercise_manager\exersaise_manager\src\main\java\com\exercise\repository\user_rep\UserRepositoryImpl.java
+E:\Java 2.0\exercise_manager\exersaise_manager\src\main\java\com\exercise\controllers\response\ApplicationErrorCodes.java
 E:\Java 2.0\exercise_manager\exersaise_manager\src\main\java\com\exercise\domain\UserParametrs.java
 E:\Java 2.0\exercise_manager\exersaise_manager\src\main\java\com\exercise\repository\contacts_rep\ContactsRepository.java
 E:\Java 2.0\exercise_manager\exersaise_manager\src\main\java\com\exercise\repository\user_rep\UserRowMapper.java

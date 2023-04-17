@@ -11,8 +11,6 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import javax.sql.DataSource;
 
 @Configuration
-@EnableAspectJAutoProxy(proxyTargetClass = true)
-@EnableWebMvc
 public class ApplicationConfig {
 
     @Bean

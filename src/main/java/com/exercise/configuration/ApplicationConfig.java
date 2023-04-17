@@ -23,16 +23,4 @@ public class ApplicationConfig {
         return new NamedParameterJdbcTemplate(dataSource);
     }
 
-    @Bean
-    public DataSource hikariDataSource(DataBaseProperties dataBaseProperties){
-        HikariDataSource hikariDataSource = new HikariDataSource();
-
-        hikariDataSource.setUsername(dataBaseProperties.getLogin());
-        hikariDataSource.setPassword(dataBaseProperties.getPassword());
-        hikariDataSource.setDriverClassName(dataBaseProperties.getPostgresDriverName());
-        hikariDataSource.setMaximumPoolSize(dataBaseProperties.getPoolSize());
-        hikariDataSource.setJdbcUrl(dataBaseProperties.getJdbcUrl());
-
-        return hikariDataSource;
-    }
 }

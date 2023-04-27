@@ -1,6 +1,6 @@
 package com.exercise.repository.hibernate;
 
-import com.exercise.domain.HibernateUser.HibernateUser;
+import com.exercise.domain.hibernate_user.HibernateUser;
 import com.exercise.repository.CRUDRepository;
 
 import java.util.List;

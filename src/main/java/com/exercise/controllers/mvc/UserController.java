@@ -15,9 +15,9 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Controller
+//@Controller
 @RequiredArgsConstructor
-@RequestMapping( "users")
+//@RequestMapping( "users")
 public class UserController {
 
     private final UsersService usersService;

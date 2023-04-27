@@ -1,6 +1,6 @@
 package com.exercise.service.hibernate;
 
-import com.exercise.domain.HibernateUser.HibernateUser;
+import com.exercise.domain.hibernate_user.HibernateUser;
 import com.exercise.domain.Users;
 import com.exercise.repository.hibernate.HibernateUserRepository;
 import lombok.RequiredArgsConstructor;
@@ -16,7 +16,7 @@ public class HibernateUserServiceImpl implements HibernateUserService{
 
     @Override
     public HibernateUser findOne(Long id) {
-        return null;
+        return hibernateUserRepository.findOne(id);
     }
 
     @Override
@@ -25,13 +25,13 @@ public class HibernateUserServiceImpl implements HibernateUserService{
     }
 
     @Override
-    public HibernateUser create(Users object) {
-        return null;
+    public HibernateUser create(HibernateUser object) {
+        return hibernateUserRepository.create(object);
     }
 
     @Override
-    public HibernateUser update(Long id, Users object) {
-        return null;
+    public HibernateUser update(Long id, HibernateUser object) {
+        return hibernateUserRepository.update(id, object);
     }
 
     @Override

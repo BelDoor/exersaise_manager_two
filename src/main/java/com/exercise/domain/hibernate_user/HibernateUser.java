@@ -1,4 +1,4 @@
-package com.exercise.domain.HibernateUser;
+package com.exercise.domain.hibernate_user;
 
 
 import com.exercise.domain.Sex;
@@ -13,9 +13,13 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -27,6 +31,9 @@ import java.sql.Timestamp;
 public class HibernateUser {
 
     @Id
+    @GeneratedValue(generator = "users_id_seq", strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(name = "users_id_seq", sequenceName = "users_id_sec",
+            allocationSize = 1, initialValue = 200)
     @Column
     private Long id;
 
@@ -48,6 +55,9 @@ public class HibernateUser {
 
     @Column(name = "role_id")
     private Long roleId;
+
+    @Column(name = "created")
+    private Timestamp created = Timestamp.valueOf(LocalDateTime.now());
 
     public String toString(){
         return ToStringBuilder.reflectionToString(this, ToStringStyle.JSON_STYLE);

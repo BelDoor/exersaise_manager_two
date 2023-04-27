@@ -1,6 +1,6 @@
 package com.exercise.service.hibernate;
 
-import com.exercise.domain.HibernateUser.HibernateUser;
+import com.exercise.domain.hibernate_user.HibernateUser;
 import com.exercise.domain.Users;
 
 import java.util.List;
@@ -10,9 +10,9 @@ public interface HibernateUserService {
 
     List<HibernateUser> findAll();
 
-    HibernateUser create(Users object);
+    HibernateUser create(HibernateUser object);
 
-    HibernateUser update(Long id, Users object);
+    HibernateUser update(Long id, HibernateUser object);
 
     void delete(Long id);
 
